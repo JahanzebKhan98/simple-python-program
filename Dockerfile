@@ -1,5 +1,10 @@
 FROM python:3.8
-Add main.py .
+
+
+RUN mkdir /app
+WORKDIR /app
+ADD . /app/
+
 RUN pip install requests beautifulsoup4
 
-CMD ["python","./main.py"]
+CMD ["python","/app/main.py""]
