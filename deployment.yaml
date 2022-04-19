@@ -4,7 +4,7 @@ metadata:
   name: hello-jahanzeb
 spec:
   selector:
-    app: hello-python
+    app: test-app
   ports:
   - protocol: "TCP"
     port: 80
@@ -15,16 +15,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-python
+  name: test-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-python
+      app: test-app
   template:
     metadata:
       labels:
-        app: hello-python
+        app: test-app
     spec:
       containers:
       - name: hello-python
