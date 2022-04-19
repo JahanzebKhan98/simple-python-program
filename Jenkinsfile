@@ -20,7 +20,7 @@ pipeline {
     stage('Build') {
 
 			steps {
-				sh 'docker build -t jahanzebpythonapp:latest .'
+				sh 'docker build -t 03022086691/jahanzebpythonapp:latest .'
 			}
 		}
 
@@ -34,7 +34,7 @@ pipeline {
 		stage('Push') {
 
 			steps {
-				sh 'docker push jahanzebpythonapp:latest'
+				sh 'docker push 03022086691/jahanzebpythonapp:latest'
 			}
 		}
     
