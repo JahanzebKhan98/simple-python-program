@@ -4,7 +4,7 @@ metadata:
   name: hello-jahanzeb
 spec:
   selector:
-    app: jk-test-app
+    app: jk-test-app-2
   ports:
   - protocol: "TCP"
     port: 80
@@ -15,19 +15,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jk-test-app
+  name: jk-test-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jk-test-app
+      app: jk-test-app-2
   template:
     metadata:
       labels:
-        app: jk-test-app
+        app: jk-test-app-2
     spec:
       containers:
-      - name: jk-test-app
+      - name: jk-test-app-2
         image: 03022086691/jahanzebpythonapp:latest
         ports:
         - containerPort: 5000
