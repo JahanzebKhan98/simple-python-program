@@ -2,7 +2,7 @@ pipeline {
 
   agent any
   environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-usman')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred')
 	}
 
 
@@ -12,7 +12,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/usmanhidral/k8s-jenikns-python.git', branch:'master'
+        git url:'https://github.com/JahanzebKhan98/simple-python-program.git', branch:'main'
       }
     }
     
@@ -20,7 +20,7 @@ pipeline {
     stage('Build') {
 
 			steps {
-				sh 'docker build -t usmanhidral/hello-python:latest .'
+				sh 'docker build -t jahanzebpythonapp:latest .'
 			}
 		}
 
@@ -34,7 +34,7 @@ pipeline {
 		stage('Push') {
 
 			steps {
-				sh 'docker push usmanhidral/hello-python:latest'
+				sh 'docker push jahanzebpythonapp:latest'
 			}
 		}
     
